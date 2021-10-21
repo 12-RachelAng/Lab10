@@ -8,21 +8,26 @@ namespace Tests
 {
     public class TestSuite
     {
-        // A Test behaves as an ordinary method
+        private float result = 0.0f;
+
         [Test]
-        public void TestSuiteSimplePasses()
+        public void TestAddition()
         {
-            // Use the Assert class to test conditions
+            //Use the Assert Class to Test Conditions
+            result = Calculator.CalculatePair(5, 2, "+");
+            Assert.AreEqual(result, 7);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator TestSuiteWithEnumeratorPasses()
+        public IEnumerator TestUnityAddition()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
+            //Use the Assert Class to Test Conditions
+            //Use yield to skip a frame
             yield return null;
+
+            result = Calculator.CalculatePair(5, 2, "+");
+            Assert.AreEqual(result, 7);
         }
+
     }
 }
