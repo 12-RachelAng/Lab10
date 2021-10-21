@@ -86,5 +86,24 @@ namespace Tests
             result = Calculator.CalculatePair(5, 2, "/");
             Assert.AreEqual(result, 2.5f);
         }
+
+        //Square Root
+        [Test]
+        public void TestSquareRoot()
+        {
+            result = Calculator.CalculatePair(5, 2, "Mathf.Sqrt");
+            Assert.AreEqual(result, 0.0f);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnitySquareRoot()
+        {
+            //Use the Assert Class to Test Conditions
+            //Use yield to skip a frame
+            yield return null;
+
+            result = Calculator.CalculatePair(5, 2, "Mathf.Sqrt");
+            Assert.AreEqual(result, 0.0f);
+        }
     }
 }
