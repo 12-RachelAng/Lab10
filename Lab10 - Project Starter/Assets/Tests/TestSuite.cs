@@ -10,6 +10,7 @@ namespace Tests
     {
         private float result = 0.0f;
 
+        //Addition
         [Test]
         public void TestAddition()
         {
@@ -29,6 +30,7 @@ namespace Tests
             Assert.AreEqual(result, 7);
         }
 
+        //Subtraction
         [Test]
         public void TestSubtraction()
         {
@@ -45,6 +47,25 @@ namespace Tests
 
             result = Calculator.CalculatePair(5, 2, "-");
             Assert.AreEqual(result, 3);
+        }
+
+        //Multiplication
+        [Test]
+        public void TestMultiplication()
+        {
+            result = Calculator.CalculatePair(5, 2, "*");
+            Assert.AreEqual(result, 10);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnityMultiplication()
+        {
+            //Use the Assert Class to Test Conditions
+            //Use yield to skip a frame
+            yield return null;
+
+            result = Calculator.CalculatePair(5, 2, "*");
+            Assert.AreEqual(result, 10);
         }
     }
 }
