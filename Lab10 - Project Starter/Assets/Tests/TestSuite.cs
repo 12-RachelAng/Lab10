@@ -105,5 +105,24 @@ namespace Tests
             result = Calculator.CalculatePair(5, 2, "Mathf.Sqrt");
             Assert.AreEqual(result, 0.0f);
         }
+
+        //Power
+        [Test]
+        public void TestPower()
+        {
+            result = Calculator.CalculatePair(5, 2, "Math.Pow");
+            Assert.AreEqual(result, 0.0f);
+        }
+
+        [UnityTest]
+        public IEnumerator TestUnityPowert()
+        {
+            //Use the Assert Class to Test Conditions
+            //Use yield to skip a frame
+            yield return null;
+
+            result = Calculator.CalculatePair(5, 2, "Math.Pow");
+            Assert.AreEqual(result, 0.0f);
+        }
     }
 }
